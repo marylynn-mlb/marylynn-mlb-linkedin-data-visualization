@@ -168,12 +168,12 @@ footer .credit{border-left:8px solid var(--gold);background:#faf8f1;padding:10px
 <!-- 07 -->
 <section class="sec" id="s07">
 <div class="sh"><span class="num">07</span><div><h2>Connections vs. real relationships</h2><p class="sub">Every connection, sorted by when we last exchanged a LinkedIn message.</p></div></div>
-<div class="cards3"><div class="hc a"><b>24%</b><span>have ever exchanged a message with me (232 of 959)</span></div><div class="hc b"><b>11%</b><span>have ever gone back and forth (108)</span></div><div class="hc c"><b>42</b><span>two-way exchanges in the last year. My working network is closer to 42 than 959.</span></div></div>
+<div class="cards3"><div class="hc a"><b>23%</b><span>have ever exchanged a message with me (218 of 959)</span></div><div class="hc b"><b>11%</b><span>have ever gone back and forth (108)</span></div><div class="hc c"><b>42</b><span>two-way exchanges in the last year. My working network is closer to 42 than 959.</span></div></div>
 <div class="card"><h3>Five tiers of contact</h3><div class="tiers" id="s07-tiers"></div></div>
 <details class="more" id="m07"><summary>More detail</summary><div class="mb">
-<div class="card"><h3>Each tier, by who did the talking</h3><canvas id="s07-stack" height="150"></canvas><p class="note">The 727 never-messaged connections are left off. Two-way means both of us have sent a message at some point.</p></div>
+<div class="card"><h3>Each tier, by who did the talking</h3><canvas id="s07-stack" height="150"></canvas><p class="note">The 741 never-messaged connections are left off. Two-way means both of us have sent a message at some point.</p></div>
 <div class="two"><div class="card"><h3>From 959 names to live relationships</h3><canvas id="s07-fun" height="230"></canvas></div><div class="card"><h3>Connections added each year, by whether we ever messaged</h3><canvas id="s07-yr" height="230"></canvas></div></div></div></details>
-<div class="take"><b>Takeaway.</b> The biggest opportunity is the dormant group: 55 of the 105 dormant connections were true two-way relationships. Another 102 connections wrote to me once and got no reply. And collecting hasn't slowed: 50 of the 99 people I connected with in the last year have never messaged me.</div>
+<div class="take"><b>Takeaway.</b> The biggest opportunity is the dormant group: 55 of the 105 dormant connections were true two-way relationships. Another 88 connections wrote to me once and got no reply. And collecting hasn't slowed: 50 of the 99 people I connected with in the last year have never messaged me.</div>
 <p class="src">Source: Connections.csv and messages.csv, matched by profile URL. Tiers: Active = last message within 90 days; Some contact = 91 days to a year; Going stale = 1 to 2 years; Dormant = over 2 years. This counts LinkedIn messages only. 64 of my 69 Chegg connections show as never messaged because coworkers talk on Slack and email.</p>
 </section>
 
@@ -412,7 +412,7 @@ new Chart($('s06-rate'),{type:'bar',data:{labels:['My requests accepted','Inboun
 
 /* ---------- 07 ---------- */
 (function(){
-const D={"cats":["Active","Some contact","Going stale","Dormant","Never messaged"],"total":959,"counts":[29,50,48,105,727],"two":[23,19,11,55,0],"theirs":[1,25,34,43,0],"mine":[5,6,3,7,0],"years":[2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026],"yr_never":[1,28,13,10,25,43,32,41,42,35,35,25,26,27,53,55,43,57,36,61,39],"yr_msg":[0,7,3,3,1,6,5,10,8,1,6,10,3,8,15,9,16,21,14,59,27],"chegg":{"n":69,"never":64},"clar":{"n":22,"never":17},"pyramid":[959,232,108,42,23],"new12_never":50,"new12":99,"med_msgs_two":3};
+const D={"cats":["Active","Some contact","Going stale","Dormant","Never messaged"],"total":959,"counts":[29,50,34,105,741],"two":[23,19,11,55,0],"theirs":[1,25,20,43,0],"mine":[5,6,3,7,0],"years":[2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026],"yr_never":[1,28,13,10,25,45,33,42,45,35,37,25,26,27,54,56,44,57,36,63,39],"yr_msg":[0,7,3,3,1,4,4,9,5,1,4,10,3,8,14,8,15,21,14,57,27],"chegg":{"n":69,"never":64},"clar":{"n":0,"never":0},"pyramid":[959,218,108,42,23],"new12":99,"new12_never":50,"oneWay":88};
 const C=['#046b5c','#275273','#cca300','#8b8d92','#e1d9c1'],TX=['#fff','#fff','#062a30','#fff','#062a30'];
 const p=a=>Math.round(a/D.total*100);
 $('s07-tiers').innerHTML=D.cats.map((c,i)=>`<div class="tr" style="background:${C[i]};color:${TX[i]}"><b>${D.counts[i]}</b><span>${c}</span><small>${p(D.counts[i])}% of connections${D.two[i]?` · ${D.two[i]} two-way`:''}</small></div>`).join('');
